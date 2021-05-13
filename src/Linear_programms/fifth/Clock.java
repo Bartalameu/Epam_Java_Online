@@ -7,24 +7,12 @@ public class Clock {
         this.input = input;
     }
 
-    @Override
-    public String toString() {
-        String format = Integer.toString(input);
-        StringBuilder sb = new StringBuilder();
-        int i;
-        for (i = 0; i < format.length(); i++) {
-           char ch= format.charAt(i);
-           sb.append(ch);
-            if (i == 1) {
-             sb.append("ч ");
-            }
-            if (i==3){
-                sb.append("мин ");
-            }
-            if (i==5){
-                sb.append("c ");
-            }
-        }
-        return  sb.toString();
+    public String convert() {
+        int h = input / 3600;
+        int min = (input % 3600) / 60;
+        int sec = input % 3600 % 60;
+        return h + "h " + min + "мин " + sec + "с";
     }
+
+
 }

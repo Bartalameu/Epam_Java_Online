@@ -7,7 +7,7 @@ public class converter_digits_to_clock {
 
         Scanner scanner=new Scanner(System.in);
         Clock time = new Clock(scanner.nextInt());
-        System.out.println( time);
+        System.out.println( time.convert());
 
 
     }
