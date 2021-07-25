@@ -2,7 +2,7 @@ package com.github.bartalameu.epam_java_online.algorithmization.multidimensional
 
 import java.util.Scanner;
 
-public class Twelfth {
+public class Thirteenth {
     public static void main(String[] args) {
         int[][] arr = new int[6][6];
         for (int i = 0; i < arr.length; i++) {
@@ -14,7 +14,7 @@ public class Twelfth {
         }
         System.out.println("______________ Before sorting ______________");
         System.out.println("""
-                Choose variant of sorting row:\s
+                Choose variant of sorting column:\s
                 1- for sorting from smaller to larger :
                 2- for sorting from a larger to smaller :\s""");
 
@@ -32,10 +32,10 @@ public class Twelfth {
         for (int i = 0; i < arr.length; i++) {
             for (int j = arr[i].length - 1; j > 0; j--) {
                 for (int b = 0; b < j; b++) {
-                    if (arr[i][b] > arr[i][b + 1]) {
-                        int temp = arr[i][b + 1];
-                        arr[i][b + 1] = arr[i][b];
-                        arr[i][b] = temp;
+                    if (arr[b][i] > arr[b+1][i]) {
+                        int temp = arr[b+1][i];
+                        arr[b+1][i] = arr[b][i];
+                        arr[b][i] = temp;
                     }
                 }
             }
@@ -49,10 +49,10 @@ public class Twelfth {
         for (int i = 0; i < arr.length; i++) {
             for (int j = arr[i].length - 1; j > 0; j--) {
                 for (int b = 0; b < j; b++) {
-                    if (arr[i][b] < arr[i][b + 1]) {
-                        int temp = arr[i][b + 1];
-                        arr[i][b + 1] = arr[i][b];
-                        arr[i][b] = temp;
+                    if (arr[b][i] < arr[b+1][i]) {
+                        int temp = arr[b+1][i];
+                        arr[b+1][i] = arr[b][i];
+                        arr[b][i] = temp;
                     }
                 }
             }
