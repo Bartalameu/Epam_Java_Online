@@ -4,8 +4,12 @@ public class Seventh {
     public static void main(String[] args) {
         double[] a = {-1.0, 0.3, 0.5, 1, 5.67, 16.66, 18.56, 158.5};
         double[] b = {-3.0, -2.56, 0.151, 14, 15.67, 26.255, 30.56, 48.5};
+        System.out.println("\nFirst array= " );
+        display_arr(a);
+        System.out.println("Second array= ");
+        display_arr(b);
         shuffle(a, b);
-        System.out.println();
+        System.out.println("\nAfter add convenient element from second array in first = ");
         display_arr(a);
     }
 
