@@ -1,11 +1,15 @@
 package com.github.bartalameu.epam_java_online.algorithmization.decomposition;
 
+import java.util.Arrays;
+
 public class Second {
     public static void main(String[] args) {
         int[] arr = {78, 294, 570, 36};
 
         int gcd = GCD(arr);
-        System.out.println(gcd);
+        System.out.println("The GCD for numbers " );
+        Arrays.stream(arr).forEach(value -> System.out.print(value+" "));
+        System.out.println("is "+gcd);
     }
 
     private static int GCD(int[] arr) {
