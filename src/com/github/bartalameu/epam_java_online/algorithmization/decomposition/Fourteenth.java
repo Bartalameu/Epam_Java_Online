@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Fourteenth {
 
     public static void main(String[] args) {
-        rude_search(inputBorderPPDI());
+        rude_search(inputBorder());
     }
 
 
@@ -42,15 +42,15 @@ public class Fourteenth {
         return sum == x;
     }
 
-    //PPDI - pluperfect digital invariant
-    private static int inputBorderPPDI() {
+    //Armstrong number (a)
+    private static int inputBorder() {
         System.out.println("Enter given number limit for searching PPDI:");
-        int p;
+        int a;
         try {
             Scanner sc = new Scanner(System.in);
-            p = sc.nextInt();
+            a = sc.nextInt();
             System.out.println("The Armstrong numbers for tipped limit : ");
-            return p;
+            return a;
         } catch (InputMismatchException e) {
             System.out.println("You tipped wrong type of argument, use only Integer. ");
         }
