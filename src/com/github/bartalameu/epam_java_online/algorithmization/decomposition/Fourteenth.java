@@ -42,9 +42,8 @@ public class Fourteenth {
         return sum == x;
     }
 
-    //Armstrong number (a)
     private static int inputBorder() {
-        System.out.println("Enter given number limit for searching PPDI:");
+        System.out.println("Enter given number limit for searching Armstrong numbers:");
         int a;
         try {
             Scanner sc = new Scanner(System.in);
