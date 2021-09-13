@@ -1,13 +1,12 @@
 package com.github.bartalameu.epam_java_online.strings_and_basics.string_like_object;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class First {
     public static void main(String[] args) {
         String sp = " Let`s      Find the         biggest  void     ";
         System.out.println(sp);
-        //For illustrative purposes replace the space to count
+        //For illustrative purposes replace space to number of spaces
         int[] max = new int[sp.length()];
         int count = 0;
         StringBuilder b = new StringBuilder(sp);
