@@ -9,7 +9,6 @@ public class Second {
 
     public static void main(String[] args) {
         String html = """
-                <asffss/>
                 <notes>
                 <note id = "1">
                 <to>Вася</to>
@@ -22,7 +21,6 @@ public class Second {
                 <from>Маша</from>
                 <heading>Важное напоминание</heading>
                 <body/>
-                <tag>
                 </note>
                 </notes>""";
         parser(html);
@@ -31,7 +29,7 @@ public class Second {
 
 
     private static void parser(String x) {
-
+        System.out.println("**************Start parsing the page : **************\n" + x + "\n");
         String reg_start = "<\\w+[^>]*>";
         String tag_start;
         String tag_end;
@@ -54,6 +52,7 @@ public class Second {
 
             Matcher matcher_tag_start = pattern_start.matcher(x);
             Matcher matcher_tag_end = pattern_end.matcher(x);
+//            System.out.println("_________________Text before if statements_____________\n"+x);
             if (matcher_reg.find() && matcher_tag_start.find() && matcher_tag_end.find()) {
                 strings.add("\n++++++++Start of node = " + matcher_tag_start.group() + "\n" + matcher_reg.group(1)
                         + "\n--------End of node = " + matcher_tag_end.group());
@@ -68,9 +67,21 @@ public class Second {
                 x = deleteTags(x, second, word);
 
             }
-            if(matcher_tag_start.find() && !matcher_tag_end.find() || !matcher_tag_start.find() && matcher_tag_end.find()) {
-                System.out.println("WARNING THIS TAG WITHOUT BODY : "+tag);
+            if (matcher_tag_start.find() && !matcher_tag_end.find()) {
+                int first = x.indexOf(matcher_tag_start.group());
+                int word = first + matcher_tag_start.group().length();
+                x = deleteTags(x, first, word);
+                System.out.println("WARNING THIS TAG WITHOUT BODY : " + tag);
+                continue;
             }
+
+            if (!matcher_tag_start.find() && matcher_tag_end.find()) {
+                int second = x.indexOf(matcher_tag_end.group());
+                int word = second + matcher_tag_end.group().length();
+                x = deleteTags(x, second, word);
+                System.out.println("WARNING THIS TAG WITHOUT BODY : " + tag);
+            }
+
 
         }
 
